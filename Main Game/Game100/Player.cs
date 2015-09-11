@@ -14,7 +14,7 @@ namespace Game100
         public float playerSpeed = 5.0f;
         private Texture2D playerTexture;
 
-        List<PlayerBullet> Bullets = new List<PlayerBullet>()
+        List<PlayerBullet> Bullets = new List<PlayerBullet>();
         public void LoadContent(ContentManager theContentManager)
         {
             playerTexture = theContentManager.Load<Texture2D>("ship");
