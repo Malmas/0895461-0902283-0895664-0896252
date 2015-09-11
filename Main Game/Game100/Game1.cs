@@ -9,14 +9,13 @@ namespace Game100
 
     public class Game1 : Game
     {
-
-        private Texture2D ship;
         private Texture2D lazer;
         private Texture2D asteroid;
         private Texture2D explosion;
 
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        Player player1;
 
         public Game1()
         {
@@ -26,7 +25,6 @@ namespace Game100
         Boolean isAlive = true;
         Boolean isPressed = false;
 
-        Vector2 shipPos;
         Vector2 lazerPos;
         Vector2 explosionPos;
         Vector2 position;
@@ -37,8 +35,9 @@ namespace Game100
 
         protected override void Initialize()
         {
+            player1 = new Player();
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            shipPos = new Vector2(350, 300);
+            player1.playerPos = new Vector2(200, 200);
             lazerPos = new Vector2(-100,-100);
             asteroidPos = new Vector2(450, 100);
             explosionPos = new Vector2(-100, -100);
@@ -50,7 +49,6 @@ namespace Game100
 
             spriteBatch = new SpriteBatch(GraphicsDevice);
             explosion = Content.Load<Texture2D>("Ultimate_Explosion");
-            ship = Content.Load<Texture2D>("ship");
             lazer = Content.Load<Texture2D>("laser.png");
             asteroid = Content.Load<Texture2D>("asteroid.png");
 
@@ -58,10 +56,17 @@ namespace Game100
         }
 
 
+        protected override void LoadContent()
+        {
+            player1.LoadContent(this.Content);
+
+        }
+
+
+
 
         protected override void Update(GameTime gameTime)
         {
-
             asteroidHitbox = new Rectangle((int)asteroidPos.X, (int)asteroidPos.Y, 20, 20);
             lazerHitbox = new Rectangle((int)lazerPos.X, (int)lazerPos.Y, 10, 15);
 
@@ -69,32 +74,29 @@ namespace Game100
             if (keyboardState.IsKeyDown(Keys.Escape))
                 Exit();
 
-
-            var shipPlacement = Vector2.Zero;
+            var playerPlacement = Vector2.Zero;
             var laserDelta = Vector2.Zero;
             MouseState state = Mouse.GetState();
 
             position.X = state.X;
             position.Y = state.Y;
 
-
             if (keyboardState.IsKeyDown(Keys.Right))
             {
-                shipPlacement += Vector2.UnitX;
+                playerPlacement += Vector2.UnitX;
             }
             if (keyboardState.IsKeyDown(Keys.Left))
             {
-                shipPlacement -= Vector2.UnitX;
+                playerPlacement -= Vector2.UnitX;
             }
             if (keyboardState.IsKeyDown(Keys.Down))
             {
-                shipPlacement += Vector2.UnitY;
+                playerPlacement += Vector2.UnitY;
             }
             if (keyboardState.IsKeyDown(Keys.Up))
             {
-                shipPlacement -= Vector2.UnitY;
+                playerPlacement -= Vector2.UnitY;
             }
-
 
              if (keyboardState.IsKeyDown(Keys.R))
             {
@@ -111,7 +113,7 @@ namespace Game100
              }
 
             if (keyboardState.IsKeyDown(Keys.X) && isAlive == true && isPressed == false)
-                lazerPos = new Vector2((shipPos.X + 26.0f), shipPos.Y);
+                lazerPos = new Vector2((player1.playerPos.X + 26.0f), player1.playerPos.Y);
 
             var lazerDelta = Vector2.Zero;
             lazerDelta -= Vector2.UnitY * 1.0f;
@@ -132,13 +134,13 @@ namespace Game100
                 explosionPos = new Vector2(-100, -100);
                 lazerPos = new Vector2(-100, -100);
                 asteroidPos = new Vector2(-100, -100);
-                if (lazerPos == shipPos)
+                if (lazerPos == player1.playerPos)
                 {
                     isAlive = true;
                 }
                 
             }
-            shipPos += shipPlacement * 5.0f;
+            player1.playerPos += playerPlacement * player1.playerSpeed;
             base.Update(gameTime);
         }
        
@@ -149,7 +151,7 @@ namespace Game100
 
             spriteBatch.Begin();
 
-            spriteBatch.Draw(ship, shipPos, Color.White);
+            player1.Draw(spriteBatch);
             spriteBatch.Draw(lazer, lazerPos, Color.White);
             spriteBatch.Draw(asteroid, asteroidPos, Color.White);
             spriteBatch.Draw(explosion, explosionPos, Color.White);

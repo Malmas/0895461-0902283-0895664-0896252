@@ -68,7 +68,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Game1.cs" />
+    <Compile Include="Player.cs" />
+    <Compile Include="PlayerBullet.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="Sprite.cs" />
     <None Include="Game100_TemporaryKey.pfx" />
     <None Include="Properties\AssemblyInfo.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

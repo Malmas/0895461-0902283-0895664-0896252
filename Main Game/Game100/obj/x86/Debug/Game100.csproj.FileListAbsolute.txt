@@ -17,3 +17,20 @@ C:\Users\feyyaz\Documents\Visual Studio 2013\Projects\Game100\Game100\obj\x86\De
 C:\Users\feyyaz\Documents\Visual Studio 2013\Projects\Game100\Game100\obj\x86\Debug\Game100.application
 C:\Users\Gun\Documents\Visual Studio 2013\Projects\Game100\Game100\obj\x86\Debug\Game100.exe
 C:\Users\Gun\Documents\Visual Studio 2013\Projects\Game100\Game100\obj\x86\Debug\Game100.pdb
+C:\Users\Gun\Documents\GitHub\0895461-0902283-0895664-0896252\Main Game\Game100\obj\x86\Debug\Game100.exe
+C:\Users\Gun\Documents\GitHub\0895461-0902283-0895664-0896252\Main Game\Game100\obj\x86\Debug\Game100.pdb
+C:\Users\Gun\Documents\GitHub\0895461-0902283-0895664-0896252\Main Game\Game100\bin\WindowsGL\Debug\Content\asteroid.png
+C:\Users\Gun\Documents\GitHub\0895461-0902283-0895664-0896252\Main Game\Game100\bin\WindowsGL\Debug\Content\laser.png
+C:\Users\Gun\Documents\GitHub\0895461-0902283-0895664-0896252\Main Game\Game100\bin\WindowsGL\Debug\Content\ship.png
+C:\Users\Gun\Documents\GitHub\0895461-0902283-0895664-0896252\Main Game\Game100\bin\WindowsGL\Debug\Content\shuttle.png
+C:\Users\Gun\Documents\GitHub\0895461-0902283-0895664-0896252\Main Game\Game100\bin\WindowsGL\Debug\Content\Ultimate_Explosion.png
+C:\Users\Gun\Documents\GitHub\0895461-0902283-0895664-0896252\Main Game\Game100\bin\WindowsGL\Debug\Properties\AssemblyInfo.cs
+C:\Users\Gun\Documents\GitHub\0895461-0902283-0895664-0896252\Main Game\Game100\bin\WindowsGL\Debug\Game100.exe.manifest
+C:\Users\Gun\Documents\GitHub\0895461-0902283-0895664-0896252\Main Game\Game100\bin\WindowsGL\Debug\Game100.application
+C:\Users\Gun\Documents\GitHub\0895461-0902283-0895664-0896252\Main Game\Game100\bin\WindowsGL\Debug\Game100.exe
+C:\Users\Gun\Documents\GitHub\0895461-0902283-0895664-0896252\Main Game\Game100\bin\WindowsGL\Debug\Game100.pdb
+C:\Users\Gun\Documents\GitHub\0895461-0902283-0895664-0896252\Main Game\Game100\bin\WindowsGL\Debug\MonoGame.Framework.dll
+C:\Users\Gun\Documents\GitHub\0895461-0902283-0895664-0896252\Main Game\Game100\bin\WindowsGL\Debug\OpenTK.dll
+C:\Users\Gun\Documents\GitHub\0895461-0902283-0895664-0896252\Main Game\Game100\obj\x86\Debug\Game100.csprojResolveAssemblyReference.cache
+C:\Users\Gun\Documents\GitHub\0895461-0902283-0895664-0896252\Main Game\Game100\obj\x86\Debug\Game100.exe.manifest
+C:\Users\Gun\Documents\GitHub\0895461-0902283-0895664-0896252\Main Game\Game100\obj\x86\Debug\Game100.application
