@@ -50,7 +50,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>USwfwRXh3i/ioHfVa4UezEk0czo=</dsig:DigestValue>
+        <dsig:DigestValue>SNZkX8OHxNu3dVCVC5mdHw1WD3w=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -85,6 +85,24 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>QqkHv+JwYcXSZGTOQR+BVNM6rso=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Episode.m4a" size="3669850">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>H2Tbz4wIsT+E+hDa1LV5wDXm5ho=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Episode.xnb" size="125">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>1L/F9f7S0pD2jTBGIBOmdRpWzLA=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\laser.png" size="3431">

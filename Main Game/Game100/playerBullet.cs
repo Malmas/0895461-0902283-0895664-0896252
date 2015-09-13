@@ -26,7 +26,7 @@ namespace Game100
             }
             if (visible == true)
             {
-                base.Update(theGameTime, bulletSpeed, mDirection);
+                //base.Update(theGameTime, bulletSpeed, mDirection);
             }
         }
 
