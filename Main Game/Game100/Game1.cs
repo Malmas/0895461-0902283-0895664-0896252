@@ -13,6 +13,7 @@ namespace Game100
         private Texture2D lazer;
         private Texture2D asteroid;
         private Texture2D explosion;
+        private Texture2D background;
         private Song backgroundMusic;
 
         GraphicsDeviceManager graphics;
@@ -51,6 +52,7 @@ namespace Game100
 
             spriteBatch = new SpriteBatch(GraphicsDevice);
             explosion = Content.Load<Texture2D>("Ultimate_Explosion");
+            background = Content.Load<Texture2D>("background");
             lazer = Content.Load<Texture2D>("laser.png");
             asteroid = Content.Load<Texture2D>("asteroid.png");
             //backgroundMusic = Content.Load<Song>("Episode");
@@ -151,14 +153,15 @@ namespace Game100
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            //GraphicsDevice.Clear(Color.CornflowerBlue);
 
             spriteBatch.Begin();
-
+            spriteBatch.Draw(background, new Rectangle(0, 0, 800, 480), Color.White);
             player1.Draw(spriteBatch);
             spriteBatch.Draw(lazer, lazerPos, Color.White);
             spriteBatch.Draw(asteroid, asteroidPos, Color.White);
             spriteBatch.Draw(explosion, explosionPos, Color.White);
+
 
             spriteBatch.End();
 
