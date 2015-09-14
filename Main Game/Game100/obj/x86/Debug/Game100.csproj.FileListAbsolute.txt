@@ -43,7 +43,6 @@ C:\Users\User\Documents\GitHub\0895461-0902283-0895664-0896252\Main Game\Game100
 C:\Users\User\Documents\GitHub\0895461-0902283-0895664-0896252\Main Game\Game100\bin\WindowsGL\Debug\Content\shuttle.png
 C:\Users\User\Documents\GitHub\0895461-0902283-0895664-0896252\Main Game\Game100\bin\WindowsGL\Debug\Content\Ultimate_Explosion.png
 C:\Users\User\Documents\GitHub\0895461-0902283-0895664-0896252\Main Game\Game100\bin\WindowsGL\Debug\Properties\AssemblyInfo.cs
-C:\Users\User\Documents\GitHub\0895461-0902283-0895664-0896252\Main Game\Game100\bin\WindowsGL\Debug\Content\Episode.m4a
 C:\Users\User\Documents\GitHub\0895461-0902283-0895664-0896252\Main Game\Game100\bin\WindowsGL\Debug\Content\Episode.xnb
 C:\Users\User\Documents\GitHub\0895461-0902283-0895664-0896252\Main Game\Game100\bin\WindowsGL\Debug\Game100.exe.manifest
 C:\Users\User\Documents\GitHub\0895461-0902283-0895664-0896252\Main Game\Game100\bin\WindowsGL\Debug\Game100.application

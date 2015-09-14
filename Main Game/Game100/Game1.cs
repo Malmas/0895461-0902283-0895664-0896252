@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Media;
+using Microsoft.Xna.Framework.Audio;
 using System;
 using System.Collections.Generic;
 
@@ -14,7 +14,7 @@ namespace Game100
         private Texture2D asteroid;
         private Texture2D explosion;
         private Texture2D background;
-        private Song backgroundMusic;
+        private SoundEffect backgroundMusic;
 
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
@@ -55,8 +55,8 @@ namespace Game100
             background = Content.Load<Texture2D>("background");
             lazer = Content.Load<Texture2D>("laser.png");
             asteroid = Content.Load<Texture2D>("asteroid.png");
-            //backgroundMusic = Content.Load<Song>("Episode");
-            //MediaPlayer.Play(backgroundMusic);
+            backgroundMusic = Content.Load<SoundEffect>("Episode");
+            backgroundMusic.Play();
 
             base.Initialize();
         }
