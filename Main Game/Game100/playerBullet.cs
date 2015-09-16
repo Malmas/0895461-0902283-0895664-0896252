@@ -11,9 +11,22 @@ namespace Game100
     class PlayerBullet : Sprite
     {
         public Vector2 playerBulletPos = new Vector2(-200, -200);
-        public float bulletSpeed = 4.0f;
+        public Vector2 playerBulletDir;
+        public float bulletSpeed = 7.0f;
         public bool visible = false;
-        private Texture2D playerBulletTexture;
+        protected Texture2D playerBulletTexture;
+        
+
+        public void reset()
+        {
+            playerBulletPos = new Vector2(-200, 200);
+        }
+        public void fire(Vector2 startPosition, Vector2 direction)
+        {
+            playerBulletPos = startPosition;
+            playerBulletDir = direction;
+
+        }
         public void LoadContent(ContentManager theContentManager)
         {
             playerBulletTexture = theContentManager.Load<Texture2D>("laser");
@@ -24,15 +37,25 @@ namespace Game100
             {
                 visible = false;
             }
-            if (visible == true)
+            else
             {
-                //base.Update(theGameTime, bulletSpeed, mDirection);
+                visible = true;
+            }
+            if (visible)
+            {
+                var bulletDelta = Vector2.Zero;
+                playerBulletPos += playerBulletDir * bulletSpeed;
+            }
+            else
+            {
+
             }
         }
 
         public void Draw(SpriteBatch theSpriteBatch)
         {
-            theSpriteBatch.Draw(playerBulletTexture, playerBulletPos, Color.White);
+            if (visible)
+                theSpriteBatch.Draw(playerBulletTexture, playerBulletPos, Color.White);
         }
         
     }
