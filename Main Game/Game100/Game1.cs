@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework.Audio;
 using System;
 using System.Collections.Generic;
 
+
 namespace Game100
 {
 
@@ -18,6 +19,7 @@ namespace Game100
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Player player1;
+        Spawner spawner;
 
         public Game1()
         {
@@ -41,6 +43,7 @@ namespace Game100
             player1.playerPos = new Vector2(200, 200);
             asteroidPos = new Vector2(450, 100);
             explosionPos = new Vector2(-100, -100);
+            spawner = new Spawner();
 
             position = new Vector2(graphics.GraphicsDevice.Viewport.
                        Width / 2,
@@ -71,6 +74,7 @@ namespace Game100
         {
             player1.Update(gameTime);
             player1.LoadContent(this.Content);
+            spawner.Update(gameTime);
             asteroidHitbox = new Rectangle((int)asteroidPos.X, (int)asteroidPos.Y, 20, 20);
             //lazerHitbox = new Rectangle((int)lazerPos.X, (int)lazerPos.Y, 10, 15);
 
