@@ -113,11 +113,10 @@ namespace Game100
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            spawner.Draw(spriteBatch);
             spriteBatch.Begin();
             spriteBatch.Draw(background, new Rectangle(0, 0, 800, 480), Color.White);
             player1.Draw(spriteBatch);
-            spriteBatch.Draw(asteroid, asteroidPos, Color.White);
+            spawner.Draw(spriteBatch);
             spriteBatch.Draw(explosion, explosionPos, Color.White);
 
             spriteBatch.End();

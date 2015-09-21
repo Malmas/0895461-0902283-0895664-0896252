@@ -19,7 +19,7 @@ namespace Game100
 
         public void LoadContent(ContentManager theContentManager)
         {
-            asteroidTexture = theContentManager.Load<Texture2D>("laser");
+            asteroidTexture = theContentManager.Load<Texture2D>("asteroid");
         }
         public void spawn(Vector2 startPosition, Vector2 direction)
         {
