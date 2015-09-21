@@ -14,6 +14,7 @@ namespace Game100
         public Vector2 playerPos = new Vector2(-200, -200);
         public float playerSpeed = 5.0f;
         protected Texture2D playerTexture;
+        public float timeSinceLastShot = 0f;
 
         List<PlayerBullet> Bullets = new List<PlayerBullet>();
         public void LoadContent(ContentManager theContentManager)
@@ -48,13 +49,18 @@ namespace Game100
             }
             return false;
         }
-        public void Update(GameTime gametime)
+
+        public void Update(GameTime gameTime)
         {
             var keyboardState = Keyboard.GetState();
-            if (keyboardState.IsKeyDown(Keys.Space))
+            timeSinceLastShot += (float)gameTime.ElapsedGameTime.TotalSeconds;
+            
+            if (keyboardState.IsKeyDown(Keys.Space) && timeSinceLastShot > 0.5f)
             {
-                shootBullet();
+                    shootBullet();
+                    timeSinceLastShot = 0;
             }
+
             var playerDelta = Vector2.Zero;
             if (keyboardState.IsKeyDown(Keys.Right))
             {
@@ -76,9 +82,26 @@ namespace Game100
 
             foreach(PlayerBullet bullet in Bullets)
             {
-                bullet.Update(gametime);
+                bullet.Update(gameTime);
+            }
+            if (playerPos.X > 755)
+            {
+                playerPos.X = 755; 
+            }
+            if (playerPos.X < -20)
+            {
+                playerPos.X = -20;
+            }
+            if (playerPos.Y > 430)
+            {
+                playerPos.Y = 430;
+            }
+            if (playerPos.Y < -12)
+            {
+                playerPos.Y = -12;
             }
         }
+
         public void Draw(SpriteBatch theSpriteBatch)
         {
             theSpriteBatch.Draw(playerTexture, playerPos, Color.White);

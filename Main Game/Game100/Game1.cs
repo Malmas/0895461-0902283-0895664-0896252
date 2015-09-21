@@ -33,8 +33,7 @@ namespace Game100
         Vector2 position;
         Vector2 asteroidPos;
 
-        Rectangle asteroidHitbox;
-        //Rectangle lazerHitbox;
+        
 
         protected override void Initialize()
         {
@@ -75,8 +74,7 @@ namespace Game100
             player1.Update(gameTime);
             player1.LoadContent(this.Content);
             spawner.Update(gameTime);
-            asteroidHitbox = new Rectangle((int)asteroidPos.X, (int)asteroidPos.Y, 20, 20);
-            //lazerHitbox = new Rectangle((int)lazerPos.X, (int)lazerPos.Y, 10, 15);
+            spawner.LoadContent(this.Content);
 
             var keyboardState = Keyboard.GetState();
             if (keyboardState.IsKeyDown(Keys.Escape))
@@ -101,11 +99,7 @@ namespace Game100
                 isPressed = true;
             }
 
-            /*if (asteroidHitbox.Intersects(lazerHitbox)) {
-                explosionPos = asteroidPos;
-                isAlive = false;
-                isPressed = false;
-            } */
+           
             else if (isAlive == false)
             {
                 explosionPos = new Vector2(-100, -100);
@@ -119,7 +113,7 @@ namespace Game100
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
+            spawner.Draw(spriteBatch);
             spriteBatch.Begin();
             spriteBatch.Draw(background, new Rectangle(0, 0, 800, 480), Color.White);
             player1.Draw(spriteBatch);

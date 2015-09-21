@@ -9,31 +9,42 @@ namespace Game100
 {
     class Spawner
     {
-        float spawnTimer = 0.0f;
-        const float TIME_TO_WAIT = 3.0f;
+        int spawnTimer = 0;
+        const int TIME_TO_WAIT = 90;
         List<Asteroid> Asteroids = new List<Asteroid>();
         Random random = new Random();
+        public void LoadContent(ContentManager theContentManager)
+        {
+            foreach (Asteroid asteroid in Asteroids)
+            {
+                if (asteroid.visible)
+                    asteroid.LoadContent(theContentManager);
+            }
+        }
         public void spawn(int objectChoice)
         {
-            switch(objectChoice)
+            switch (objectChoice)
             {
                 case 1:
-                Asteroid asteroid = new Asteroid();
-                Asteroids.Add(asteroid);
-                asteroid.spawn((new Vector2(random.Next(20,380),-20)),Vector2.UnitY);
-                break;
+                    Asteroid asteroid = new Asteroid();
+                    asteroid.spawn(new Vector2(random.Next(20, 680), 0), Vector2.UnitY);
+                    Asteroids.Add(asteroid);
+                    break;
             }
-            
+
         }
         public void Update(GameTime theGameTime)
         {
-            spawnTimer += (float)(theGameTime.ElapsedGameTime.TotalSeconds);
-            if (spawnTimer == TIME_TO_WAIT)
+            if (spawnTimer >= TIME_TO_WAIT)
+            {
                 spawn(1);
+                spawnTimer = 0;
+            }
             foreach (Asteroid asteroid in Asteroids)
             {
                 asteroid.Update(theGameTime);
             }
+            spawnTimer++;
         }
         public void Draw(SpriteBatch theSpriteBatch)
         {

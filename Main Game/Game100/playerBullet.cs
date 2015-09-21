@@ -15,7 +15,7 @@ namespace Game100
         public float bulletSpeed = 7.0f;
         public bool visible = false;
         protected Texture2D playerBulletTexture;
-        
+        Rectangle lazerHitbox;
 
         public void reset()
         {
@@ -33,6 +33,8 @@ namespace Game100
         }
         public void Update(GameTime theGameTime)
         {
+            lazerHitbox = new Rectangle((int)playerBulletPos.X, (int)playerBulletPos.Y, 10, 15);
+
             if (playerBulletPos.Y < -30)
             {
                 visible = false;

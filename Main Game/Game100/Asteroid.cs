@@ -12,9 +12,11 @@ namespace Game100
     {
         public Vector2 asteroidPos = new Vector2(-200, -200);
         public Vector2 asteroidDir;
-        public float asteroidSpeed = 6.0f;
+        public float asteroidSpeed = 3.0f;
         protected Texture2D asteroidTexture;
         public bool visible = false;
+        Rectangle asteroidHitbox;
+
         public void LoadContent(ContentManager theContentManager)
         {
             asteroidTexture = theContentManager.Load<Texture2D>("laser");
@@ -27,6 +29,8 @@ namespace Game100
         }
         public void Update(GameTime theGameTime)
         {
+            asteroidHitbox = new Rectangle((int)asteroidPos.X, (int)asteroidPos.Y, 20, 20);
+
             if (asteroidPos.Y < -30)
             {
                 visible = false;
