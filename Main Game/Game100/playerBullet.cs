@@ -13,10 +13,18 @@ namespace Game100
         public Vector2 playerBulletPos = new Vector2(-200, -200);
         public Vector2 playerBulletDir;
         public float bulletSpeed = 7.0f;
-        public bool visible = false;
+        public bool visible = true;
         protected Texture2D playerBulletTexture;
-        Rectangle lazerHitbox;
+        public Rectangle lazerHitbox;
 
+        public void setVisible(bool b)
+        {
+            this.visible = b;
+        }
+        public void delete()
+        {
+            playerBulletPos = new Vector2(-100,-100);
+        }
         public void reset()
         {
             playerBulletPos = new Vector2(-200, 200);
@@ -35,22 +43,12 @@ namespace Game100
         {
             lazerHitbox = new Rectangle((int)playerBulletPos.X, (int)playerBulletPos.Y, 10, 15);
 
-            if (playerBulletPos.Y < -30)
-            {
-                visible = false;
-            }
-            else
-            {
-                visible = true;
-            }
+           
+            
             if (visible)
             {
                 var bulletDelta = Vector2.Zero;
                 playerBulletPos += playerBulletDir * bulletSpeed;
-            }
-            else
-            {
-
             }
         }
 

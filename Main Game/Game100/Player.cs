@@ -15,8 +15,9 @@ namespace Game100
         public float playerSpeed = 5.0f;
         protected Texture2D playerTexture;
         public float timeSinceLastShot = 0f;
+        public int lives = 3;
 
-        List<PlayerBullet> Bullets = new List<PlayerBullet>();
+        public static List<PlayerBullet> Bullets = new List<PlayerBullet>();
         public void LoadContent(ContentManager theContentManager)
         {
             playerTexture = theContentManager.Load<Texture2D>("ship");
@@ -39,7 +40,7 @@ namespace Game100
                     return true;
                 }
             }
-            if (createNew == true);
+            if (createNew == true)
             {
                 PlayerBullet bullet = new PlayerBullet();
                 Vector2 firingPos = new Vector2((playerPos.X + 26.0f), playerPos.Y);
@@ -52,6 +53,10 @@ namespace Game100
 
         public void Update(GameTime gameTime)
         {
+            if (lives == 0)
+            {
+
+            }
             var keyboardState = Keyboard.GetState();
             timeSinceLastShot += (float)gameTime.ElapsedGameTime.TotalSeconds;
             

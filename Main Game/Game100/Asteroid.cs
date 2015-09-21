@@ -12,10 +12,15 @@ namespace Game100
     {
         public Vector2 asteroidPos = new Vector2(-200, -200);
         public Vector2 asteroidDir;
-        public float asteroidSpeed = 3.0f;
+        public float asteroidSpeed = 1.5f;
         protected Texture2D asteroidTexture;
-        public bool visible = false;
-        Rectangle asteroidHitbox;
+        public bool visible = true;
+        public Rectangle asteroidHitbox;
+
+        public void setVisible(bool b)
+        {
+            this.visible = b;
+        }
 
         public void LoadContent(ContentManager theContentManager)
         {
@@ -27,26 +32,21 @@ namespace Game100
             asteroidDir = direction;
 
         }
+
+        public void delete()
+        {
+            asteroidPos = new Vector2(-100, -100);
+        }
+
         public void Update(GameTime theGameTime)
         {
-            asteroidHitbox = new Rectangle((int)asteroidPos.X, (int)asteroidPos.Y, 20, 20);
+            asteroidHitbox = new Rectangle((int)asteroidPos.X, (int)asteroidPos.Y, 21, 20);
 
-            if (asteroidPos.Y < -30)
-            {
-                visible = false;
-            }
-            else
-            {
-                visible = true;
-            }
+
             if (visible)
             {
                 var bulletDelta = Vector2.Zero;
                 asteroidPos += asteroidSpeed * asteroidDir;
-            }
-            else
-            {
-
             }
         }
         public void Draw(SpriteBatch theSpriteBatch)

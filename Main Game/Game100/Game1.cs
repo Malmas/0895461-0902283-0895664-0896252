@@ -15,7 +15,7 @@ namespace Game100
         private Texture2D explosion;
         private Texture2D background;
         private SoundEffect backgroundMusic;
-
+        private Player p;
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Player player1;
@@ -26,14 +26,12 @@ namespace Game100
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
         }
-        Boolean isAlive = true;
-        Boolean isPressed = false;
 
         Vector2 explosionPos;
         Vector2 position;
         Vector2 asteroidPos;
-
-        
+        List<Asteroid> Asteroids = new List<Asteroid>();
+        List<PlayerBullet> Bullets = new List<PlayerBullet>();
 
         protected override void Initialize()
         {
@@ -55,7 +53,7 @@ namespace Game100
             asteroid = Content.Load<Texture2D>("asteroid.png");
             backgroundMusic = Content.Load<SoundEffect>("Episode");
             backgroundMusic.Play();
-
+            
             base.Initialize();
         }
 
@@ -85,27 +83,25 @@ namespace Game100
             position.X = state.X;
             position.Y = state.Y;
 
-             if (keyboardState.IsKeyDown(Keys.R))
+            foreach (Asteroid z in Spawner.Asteroids)
             {
-                asteroidPos = new Vector2(450, 100);
-                explosionPos = new Vector2(-100, -100);
-                isAlive = true;
-                isPressed = false;
+                if (asteroidPos.Y > 430)
+                {
+                    z.delete();
+                    p.lives--;
+                }
+                foreach (PlayerBullet b in Player.Bullets)
+                {
+                    if (b.lazerHitbox.Intersects(z.asteroidHitbox))
+                    {
+                        // so your loop can delete the bullet                   
+                        b.delete();
+                        z.delete();
+                        // do something with the zombie
+                    }
+                }
             }
 
-
-            if (keyboardState.IsKeyDown(Keys.X))
-            {
-                isPressed = true;
-            }
-
-           
-            else if (isAlive == false)
-            {
-                explosionPos = new Vector2(-100, -100);
-                asteroidPos = new Vector2(-100, -100);
-                
-            }
             base.Update(gameTime);
         }
        

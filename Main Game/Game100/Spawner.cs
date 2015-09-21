@@ -11,7 +11,7 @@ namespace Game100
     {
         int spawnTimer = 0;
         const int TIME_TO_WAIT = 90;
-        List<Asteroid> Asteroids = new List<Asteroid>();
+        public static List<Asteroid> Asteroids = new List<Asteroid>();
         Random random = new Random();
         public void LoadContent(ContentManager theContentManager)
         {
@@ -27,7 +27,7 @@ namespace Game100
             {
                 case 1:
                     Asteroid asteroid = new Asteroid();
-                    asteroid.spawn(new Vector2(random.Next(20, 680), 0), Vector2.UnitY);
+                    asteroid.spawn(new Vector2(random.Next(20, 730), -28), Vector2.UnitY);
                     Asteroids.Add(asteroid);
                     break;
             }
