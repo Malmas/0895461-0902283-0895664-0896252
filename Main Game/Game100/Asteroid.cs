@@ -33,6 +33,11 @@ namespace Game100
 
         }
 
+        public Vector2 getAsteroidPos()
+        {
+            return asteroidPos;
+        }
+
         public void delete()
         {
             asteroidPos = new Vector2(-100, -100);

@@ -15,7 +15,6 @@ namespace Game100
         private Texture2D explosion;
         private Texture2D background;
         private SoundEffect backgroundMusic;
-        private Player p;
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Player player1;
@@ -29,7 +28,6 @@ namespace Game100
 
         Vector2 explosionPos;
         Vector2 position;
-        Vector2 asteroidPos;
         List<Asteroid> Asteroids = new List<Asteroid>();
         List<PlayerBullet> Bullets = new List<PlayerBullet>();
 
@@ -38,7 +36,6 @@ namespace Game100
             player1 = new Player();
             spriteBatch = new SpriteBatch(GraphicsDevice);
             player1.playerPos = new Vector2(200, 200);
-            asteroidPos = new Vector2(450, 100);
             explosionPos = new Vector2(-100, -100);
             spawner = new Spawner();
 
@@ -69,6 +66,7 @@ namespace Game100
 
         protected override void Update(GameTime gameTime)
         {
+
             player1.Update(gameTime);
             player1.LoadContent(this.Content);
             spawner.Update(gameTime);
@@ -82,24 +80,18 @@ namespace Game100
 
             position.X = state.X;
             position.Y = state.Y;
-
             foreach (Asteroid z in Spawner.Asteroids)
             {
-                if (asteroidPos.Y > 430)
-                {
-                    z.delete();
-                    p.lives--;
-                }
                 foreach (PlayerBullet b in Player.Bullets)
                 {
                     if (b.lazerHitbox.Intersects(z.asteroidHitbox))
                     {
-                        // so your loop can delete the bullet                   
+                        explosionPos = z.getAsteroidPos();
                         b.delete();
                         z.delete();
-                        // do something with the zombie
                     }
                 }
+               
             }
 
             base.Update(gameTime);

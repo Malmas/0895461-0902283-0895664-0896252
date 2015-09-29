@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Game100.exe" size="159120">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Game100.exe" size="160144">
       <assemblyIdentity name="Game100" version="0.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>SumydMk9DVm4E4mP830JOTe3EGI=</dsig:DigestValue>
+        <dsig:DigestValue>dvqxSFi3KUwUYS3pGh/OkzCr7cg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

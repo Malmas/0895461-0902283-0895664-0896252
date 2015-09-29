@@ -35,6 +35,13 @@ namespace Game100
             playerBulletDir = direction;
 
         }
+
+        public void fire(Vector2 startPosition, float direction, float direction2)
+        {
+            playerBulletPos = startPosition;
+            playerBulletDir = new Vector2(direction,direction2);
+
+        }
         public void LoadContent(ContentManager theContentManager)
         {
             playerBulletTexture = theContentManager.Load<Texture2D>("laser");
